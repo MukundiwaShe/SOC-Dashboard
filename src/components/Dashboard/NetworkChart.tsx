@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from "recharts";
-import { Activity } from "lucide-react";
 
 interface NetworkChartProps {
   data: Array<{
@@ -14,10 +13,7 @@ export function NetworkChart({ data }: NetworkChartProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Activity className="h-5 w-5 text-primary" />
-          Network Traffic
-        </CardTitle>
+        <CardTitle>Network Traffic</CardTitle>
         <CardDescription>Real-time bandwidth usage (Mbps)</CardDescription>
       </CardHeader>
       <CardContent>

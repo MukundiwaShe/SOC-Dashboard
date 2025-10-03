@@ -1,4 +1,4 @@
-import { Shield, Activity, AlertTriangle, Users, Server, Clock, TrendingUp, Lock } from "lucide-react";
+import { Shield, Activity, AlertTriangle, Users, Server, Clock, TrendingUp } from "lucide-react";
 import { MetricsCard } from "@/components/Dashboard/MetricsCard";
 import { ThreatAlert } from "@/components/Dashboard/ThreatAlert";
 import { NetworkChart } from "@/components/Dashboard/NetworkChart";
@@ -153,8 +153,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 cyber-glow-sm rounded-lg bg-primary/10 px-3 py-2">
-                <Lock className="h-6 w-6 text-primary" />
-                <h1 className="text-xl font-bold">CyberShield</h1>
+                <h1 className="text-xl font-bold">ThreatScope</h1>
               </div>
               <span className="text-sm text-muted-foreground">Security Operations Center</span>
             </div>

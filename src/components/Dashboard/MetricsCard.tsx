@@ -21,15 +21,8 @@ export function MetricsCard({ title, value, icon: Icon, trend, severity }: Metri
       severity === "warning" && "border-warning/50",
       severity === "success" && "border-success/50"
     )}>
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className={cn(
-          "h-4 w-4",
-          severity === "critical" && "text-critical",
-          severity === "warning" && "text-warning",
-          severity === "success" && "text-success",
-          !severity && "text-muted-foreground"
-        )} />
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">{value}</div>

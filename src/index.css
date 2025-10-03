@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
-    --primary: 193 100% 50%;
+    --primary: 160 84% 39%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 96%;
@@ -26,29 +26,29 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 193 100% 50%;
+    --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 76% 36%;
+    --success: 160 84% 39%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 54 100% 62%;
+    --warning-foreground: 222.2 47.4% 11.2%;
 
     --critical: 0 84.2% 60.2%;
     --critical-foreground: 0 0% 100%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 193 100% 50%;
+    --ring: 160 84% 39%;
 
     --radius: 0.5rem;
 
-    --cyber-glow: 193 100% 50%;
-    --gradient-cyber: linear-gradient(135deg, hsl(193 100% 50% / 0.1), hsl(260 100% 50% / 0.1));
+    --cyber-glow: 160 84% 39%;
+    --gradient-cyber: linear-gradient(135deg, hsl(160 84% 39% / 0.1), hsl(54 100% 62% / 0.1));
   }
 
   .dark {
@@ -61,7 +61,7 @@ All colors MUST be HSL.
     --popover: 222.2 47.4% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 193 100% 50%;
+    --primary: 160 84% 39%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -70,27 +70,27 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 193 100% 50%;
+    --accent: 160 84% 39%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 76% 40%;
+    --success: 160 84% 39%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 54 100% 62%;
+    --warning-foreground: 222.2 47.4% 11.2%;
 
     --critical: 0 84.2% 60.2%;
     --critical-foreground: 0 0% 100%;
 
     --border: 217.2 32.6% 20%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 193 100% 50%;
+    --ring: 160 84% 39%;
 
-    --cyber-glow: 193 100% 50%;
-    --gradient-cyber: linear-gradient(135deg, hsl(193 100% 50% / 0.2), hsl(260 100% 50% / 0.2));
+    --cyber-glow: 160 84% 39%;
+    --gradient-cyber: linear-gradient(135deg, hsl(160 84% 39% / 0.2), hsl(54 100% 62% / 0.2));
   }
 }
 
