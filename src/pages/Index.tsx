@@ -1,4 +1,5 @@
-import { Shield, Activity, AlertTriangle, Users, Server, Clock, TrendingUp } from "lucide-react";
+import { Shield, Activity, AlertTriangle, Users, Server, Clock, TrendingUp, LogOut } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { MetricsCard } from "@/components/Dashboard/MetricsCard";
 import { ThreatAlert } from "@/components/Dashboard/ThreatAlert";
 import { NetworkChart } from "@/components/Dashboard/NetworkChart";
@@ -144,7 +145,26 @@ const activities = [
   },
 ];
 
-const Index = () => {
+interface IndexProps {
+  onLogout: () => void;
+  failedAttempts: Array<{ username: string; timestamp: string; ip: string }>;
+}
+
+const Index = ({ onLogout, failedAttempts }: IndexProps) => {
+  // Merge failed attempts with existing activities
+  const allActivities = [
+    ...failedAttempts.map((attempt, index) => ({
+      id: `failed-${index}`,
+      user: attempt.username,
+      action: "Login Attempt",
+      resource: "/login",
+      timestamp: attempt.timestamp,
+      status: "failed" as const,
+      ip: attempt.ip,
+    })),
+    ...activities,
+  ].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -165,6 +185,15 @@ const Index = () => {
                 </span>
               </div>
               <ThemeToggle />
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={onLogout}
+                className="gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                Logout
+              </Button>
             </div>
           </div>
         </div>
@@ -204,7 +233,7 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="logs">
-            <ActivityLog activities={activities} />
+            <ActivityLog activities={allActivities} />
           </TabsContent>
 
           <TabsContent value="vulnerabilities">

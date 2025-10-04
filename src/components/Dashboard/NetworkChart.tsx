@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from "recharts";
 
@@ -9,7 +10,41 @@ interface NetworkChartProps {
   }>;
 }
 
-export function NetworkChart({ data }: NetworkChartProps) {
+export function NetworkChart({ data: initialData }: NetworkChartProps) {
+  const [data, setData] = useState(initialData);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setData((prevData) => {
+        const newData = [...prevData];
+        newData.shift();
+        
+        const lastEntry = newData[newData.length - 1];
+        const lastInbound = lastEntry.inbound;
+        const lastOutbound = lastEntry.outbound;
+        
+        // Generate realistic fluctuations
+        const inboundChange = (Math.random() - 0.5) * 20;
+        const outboundChange = (Math.random() - 0.5) * 15;
+        
+        const newTime = new Date().toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        });
+        
+        newData.push({
+          time: newTime,
+          inbound: Math.max(30, Math.min(100, lastInbound + inboundChange)),
+          outbound: Math.max(20, Math.min(90, lastOutbound + outboundChange)),
+        });
+        
+        return newData;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <Card>
       <CardHeader>
